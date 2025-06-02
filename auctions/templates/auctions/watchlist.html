@@ -1,0 +1,33 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+Your Watchlist
+{% endblock %}
+
+{% block body %}
+    <h2>Your Watchlist</h2>
+    {% if listings %}
+        <div class="row">
+            {% for listing in listings %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="{% url 'listing_detail' listing.id %}">
+                            {% if listing.image_url %}
+                                <img src="{{ listing.image_url }}" class="card-img-top" alt="{{ listing.title }}">
+                            {% endif %}
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{% url 'listing_detail' listing.id %}">{{ listing.title }}</a>
+                            </h5>
+                            <p class="card-text">{{ listing.description|truncatewords:20 }}</p>
+                            <p class="card-text"><strong>Current Price:</strong> ${{ listing.current_price }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>You have no items in your watchlist.</p>
+    {% endif %}
+{% endblock %}

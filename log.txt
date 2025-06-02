@@ -1,0 +1,34 @@
+9/5/2025
+think that I will create model first.
+finishes create model:
+listing, bid, comment
+
+create listing pages
+13/5
+create view listing pages
+need to make the image work tho. --- done
+
+eyya i need to update the listing model to include category
+ok i think we should stop here and do later at the next session.
+
+16/5
+we back, bACK. 
+hmm pretty confusing here but I think we will use listing.current_price
+
+small project: LISTING PAGE
+* implement click on listing
+ * If the user is signed in, the user should be able to add the item to their “Watchlist.” \
+ If the item is already on the watchlist, the user should be able to remove it.
+
+ehh tmrr I think when we implement view watchlist need to check the database again
+stop at add item to watchlist
+
+18/5
+* bid on the item -- done
+* close the auction -- done
+stop at add comments to the listing page
+
+02/06
+ok back from school time to complete this project.
+
+add comments to the listing page -- done
