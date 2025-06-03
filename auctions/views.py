@@ -152,6 +152,13 @@ def bid_item(request, listing_id):
     listing.current_price = highest_bid.amount if highest_bid else listing.starting_bid
 
     if request.method == "POST":
+        # Check if user is the owner of the listing
+        if request.user == listing.owner:
+            error = "You cannot bid on your own listing."
+            return render(request, "auctions/listing_detail.html", {
+                "listing": listing,
+                "bid_error": error
+            })
         # get bid amount from post
         try:
             bid_amount = float(request.POST["bid"])
